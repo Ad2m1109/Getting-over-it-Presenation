@@ -15,11 +15,21 @@
     <!-- Hello Section -->
     <section id="hello"
         style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
-        <div class="container">
-            <h1 style="font-size: 6rem; color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.5);">Hello</h1>
-            <p style="font-size: 2rem; color: white; margin-top: 1rem;">Welcome to the Presentation</p>
-            <p style="font-size: 1.8rem; color: white; margin-top: 0.5rem; opacity: 0.9;">by Adem Youssfi</p>
-            <button id="start-presentation-btn" style="margin-top: 2rem;">Start Presentation</button>
+        <div class="container"
+            style="display: flex; align-items: center; justify-content: center; gap: 4rem; max-width: 1200px;">
+            <!-- Left: Image -->
+            <div style="flex: 1; display: flex; justify-content: center;">
+                <img src="assets/unnamed.png" alt="Getting Over It"
+                    style="max-width: 500px; width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+            </div>
+            <!-- Right: Text -->
+            <div style="flex: 1; text-align: left;">
+                <h1 style="font-size: 6rem; color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.5); margin-bottom: 1rem;">
+                    Hello</h1>
+                <p style="font-size: 2rem; color: white; margin-bottom: 1rem;">Welcome to the Presentation</p>
+                <p style="font-size: 1.8rem; color: white; margin-bottom: 2rem; opacity: 0.9;">by Adem Youssfi</p>
+                <button id="start-presentation-btn" style="margin-top: 1rem;">Start Presentation</button>
+            </div>
         </div>
     </section>
 
@@ -364,8 +374,13 @@
 
     <!-- Thank You Section -->
     <section id="thank-you"
-        style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
-        <div class="container">
+        style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;">
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline
+            style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; mix-blend-mode: screen;">
+            <source src="assets/bye.mp4" type="video/mp4">
+        </video>
+        <div class="container" style="position: relative; z-index: 1;">
             <div class="interactive-deck">
                 <div class="interactive-card-container" style="min-height: 400px;">
                     <div class="interactive-card" data-step="1">
