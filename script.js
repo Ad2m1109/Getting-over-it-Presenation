@@ -131,6 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Handle Video inside the card itself (e.g., Strong Emotions)
+        const cardVideo = currentStep.querySelector('video');
+        if (cardVideo) {
+            cardVideo.currentTime = 0; // Restart video from beginning
+            cardVideo.play().catch(e => console.log("Card video playback failed:", e));
+        }
+
         // Scroll to the section containing the current step
         const parentSection = currentStep.closest('section');
         if (parentSection) {
