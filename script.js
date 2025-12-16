@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const splitLayout = currentStep.closest('.split-layout');
         if (splitLayout) {
             const sectionMedia = splitLayout.querySelector('.section-media');
-            if (sectionMedia) {
+            if (sectionMedia && sectionMedia.tagName === 'VIDEO') {
                 const newSrc = currentStep.dataset.mediaSrc;
 
                 if (newSrc) {
@@ -123,10 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         sectionMedia.play().catch(e => console.log("Playback failed:", e));
                     } else {
                         // Same video, ensure it's playing
-                        if (sectionMedia.tagName === 'VIDEO' && sectionMedia.paused) {
+                        if (sectionMedia.paused) {
                             sectionMedia.play().catch(e => console.log("Playback failed:", e));
                         }
                     }
+                } else {
+                    // No data-media-src, just play the existing video
+                    sectionMedia.currentTime = 0; // Restart from beginning
+                    sectionMedia.play().catch(e => console.log("Split layout video playback failed:", e));
                 }
             }
         }
