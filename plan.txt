@@ -1,0 +1,11 @@
+Le plan de vos présentations sera comme suit :
+
+1. Présentation du jeu (entreprise mère / année de publication, ...)
+2. Type du jeu (2D / 3D) / action , aventure , horreur, ...
+3. Cible / Tranche d'âge
+4. Modèle économique
+5. Principe du jeu / objectif du Gameplay
+6. Points forts du jeu
+7. Vos critiques
+8. Vos propositions pour améliorer ce jeu.
+9. Exemples des jeux similaires

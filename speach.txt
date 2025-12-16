@@ -1,0 +1,71 @@
+🎤 Presentation Talk – Getting Over It with Bennett Foddy
+Introduction
+
+Hello everyone.
+Today, I’m going to present a game called Getting Over It with Bennett Foddy.
+Instead of a classic PowerPoint, I chose to create an interactive website, because this game is all about interaction, frustration, and player experience, and I wanted my presentation to reflect that.
+
+1️⃣ Présentation du jeu
+
+Getting Over It was developed and published by Bennett Foddy, an independent game designer.
+The game was released in 2017.
+It is an indie game that became very popular because of its difficulty and unique concept, especially on YouTube and streaming platforms.
+
+2️⃣ Type du jeu
+
+This game is a 2D physics-based platformer.
+It does not focus on action or graphics, but rather on precise control and physics simulation.
+The entire gameplay is based on a single mechanic: moving a hammer using the mouse.
+
+3️⃣ Cible / Tranche d’âge
+
+The game is mainly targeted at teenagers and adults.
+Even though there is no violence, the game requires patience, emotional control, and perseverance, which makes it more suitable for mature players.
+
+4️⃣ Modèle économique
+
+Getting Over It uses a simple economic model.
+It is a one-time purchase game, with no microtransactions, no DLCs, and no pay-to-win mechanics.
+
+5️⃣ Principe du jeu / Objectif du Gameplay
+
+The objective of the game is very simple:
+climb to the top of the mountain without falling.
+However, there are no checkpoints.
+If the player makes a mistake, they can lose a lot of progress, which creates tension and frustration.
+The game is designed to test the player’s skill, patience, and mindset.
+
+6️⃣ Points forts du jeu
+
+One of the main strengths of Getting Over It is its original gameplay.
+The physics feel realistic and unforgiving.
+Another strong point is the narration: Bennett Foddy comments on the player’s failures, which adds a philosophical and psychological dimension to the experience.
+Finally, the game creates strong emotions, which is rare in modern games.
+
+7️⃣ Vos critiques
+
+Despite its originality, the game can be extremely frustrating.
+The lack of checkpoints may discourage many players.
+Also, the game does not offer accessibility options, such as difficulty modes or alternative controls, which limits its audience.
+
+8️⃣ Vos propositions pour améliorer le jeu
+
+To improve the game, I would propose:
+
+An optional practice mode
+
+Accessibility settings, like sensitivity adjustment or visual aids
+
+A non-invasive checkpoint system for beginners
+These changes would make the game more accessible without changing its core philosophy.
+
+9️⃣ Exemples de jeux similaires
+
+Games similar to Getting Over It include Jump King, Pogostuck, and Only Up.
+These games follow the same idea of high difficulty, punishment for mistakes, and player perseverance.
+
+Conclusion
+
+To conclude, Getting Over It is a game that proves that simple mechanics can create deep experiences.
+By using an interactive website for this presentation, I wanted to show not only the game itself, but also how interaction is central to its design.
+Thank you for your attention.

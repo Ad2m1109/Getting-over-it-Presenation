@@ -1,0 +1,1036 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #FF6B35;
+    --secondary: #4ECDC4;
+    --accent: #FFE66D;
+    --dark: #2D3142;
+    --light: #F7F7F2;
+    --gray: #9fa3ae;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(45, 49, 66, 0.9);
+    color: var(--dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    /* Base font size increase */
+}
+
+#global-background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.hero-background {
+    display: none;
+}
+
+/* Placeholder for video/image background */
+.hero-media {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hammer {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 3;
+    transition: transform 0.15s ease-out;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.hammer-handle {
+    width: 6px;
+    height: 80px;
+    background: #8B4513;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 3px;
+}
+
+.hammer-head {
+    width: 35px;
+    height: 25px;
+    background: #696969;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero .subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator::after {
+    content: '↓';
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+section:nth-child(even) {
+    background: rgba(240, 240, 245, 0.05);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 4rem;
+    /* Increased from 3rem */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--dark);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    /* Increased from 1.2rem */
+    color: var(--gray);
+    margin-bottom: 3rem;
+}
+
+/* Media Placeholder Styles */
+.media-placeholder {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.media-placeholder::before {
+    content: '🎮';
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.1;
+}
+
+.media-placeholder img,
+.media-placeholder video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Grid Layouts */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Card Styles */
+.card {
+    background: transparent;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--primary);
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 2rem;
+    /* Increased from 1.6rem */
+    margin-bottom: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card p {
+    color: white;
+    line-height: 1.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    /* Explicit increase for card text */
+}
+
+.icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Overview Section */
+.overview-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.overview-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-item strong {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* Game Type Section */
+.game-type-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hammer-animation {
+    width: 100%;
+    height: 350px;
+    background: white;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animated-hammer {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    animation: swingHammer 3s ease-in-out infinite;
+}
+
+@keyframes swingHammer {
+
+    0%,
+    100% {
+        transform: rotate(-30deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(30deg) translateY(-20px);
+    }
+}
+
+/* Target Audience Section */
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.audience-card {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    color: white;
+}
+
+.audience-card:hover {
+    transform: scale(1.02);
+}
+
+.audience-media {
+    width: 50%;
+    min-height: 300px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    flex-shrink: 0;
+}
+
+.audience-content {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Economic Model */
+.economic-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.price-tag {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 4rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Gameplay Demo */
+.gameplay-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.demo-container {
+    width: 100%;
+    height: 450px;
+    background: white;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.demo-instructions {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    z-index: 10;
+    text-align: center;
+}
+
+.character {
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    cursor: grab;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.character:active {
+    cursor: grabbing;
+    box-shadow: 0 0 20px rgba(255, 230, 109, 0.8);
+}
+
+.demo-ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background: var(--dark);
+}
+
+/* Strengths Section */
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.strength-card {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+    color: white;
+}
+
+.strength-card:hover {
+    animation: shake 0.5s ease;
+}
+
+.strength-media {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+.strength-content {
+    padding: 2rem;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(-8px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateX(8px) rotate(1deg);
+    }
+
+    75% {
+        transform: translateX(-8px) rotate(-1deg);
+    }
+}
+
+/* Criticism Section */
+.criticism-content {
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+
+.progress-demo {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.progress-label {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.progress-container {
+    width: 100%;
+    height: 50px;
+    background: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    width: 75%;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.progress-container:hover .progress-bar {
+    animation: resetProgress 1.5s ease forwards;
+}
+
+@keyframes resetProgress {
+    0% {
+        width: 75%;
+    }
+
+    50% {
+        width: 75%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+.progress-hint {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.criticism-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.criticism-card {
+    background: transparent;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: none;
+    border-left: 4px solid var(--primary);
+    color: white;
+}
+
+/* Improvements Section */
+.improvements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.improvement-card {
+    background: transparent;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    color: white;
+}
+
+.improvement-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-5px);
+}
+
+.improvement-card.active {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+}
+
+.toggle-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.improvement-card.active .toggle-indicator {
+    background: var(--primary);
+    color: white;
+}
+
+/* Similar Games Section */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.game-card {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    color: white;
+}
+
+.game-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.game-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.game-info {
+    padding: 2rem;
+}
+
+.game-info h3 {
+    font-size: 1.8rem;
+    /* Increased from 1.5rem */
+    margin-bottom: 0.8rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+/* Split Layout Styles */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.media-pane {
+    width: 50%;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-pane video,
+.media-pane img {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.text-pane {
+    width: 50%;
+    position: relative;
+    min-height: 400px;
+    /* Match media pane */
+}
+
+/* Adjust interactive deck for text pane */
+.text-pane .interactive-deck {
+    margin: 0;
+    min-height: 300px;
+    /* Smaller min-height as it's just text */
+}
+
+.text-pane .interactive-card-container {
+    min-height: 300px;
+}
+
+.text-pane .interactive-card {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    /* Let content dictate height */
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    text-align: left;
+    /* Better for reading */
+}
+
+/* Specific Gameplay Section Styles */
+.gameplay-split .media-pane {
+    width: 65%;
+}
+
+.gameplay-split .text-pane {
+    width: 35%;
+}
+
+.gameplay-split .interactive-card,
+.gameplay-split .card {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    color: white;
+    padding: 0;
+    /* Remove padding since no card border */
+}
+
+.gameplay-split .card h3 {
+    color: white;
+    font-size: 2.5rem;
+    /* Increased from 2rem */
+    /* Make title slightly larger for impact */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gameplay-split .card p {
+    color: white;
+    font-size: 1.4rem;
+    /* Increased from 1.1rem */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .two-column,
+    .overview-grid,
+    .game-type-content,
+    .gameplay-section,
+    .strengths-grid,
+    .criticism-points,
+    .improvements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-grid,
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-card {
+        flex-direction: column;
+    }
+
+    .audience-media,
+    .audience-content {
+        width: 100%;
+    }
+
+    .split-layout,
+    .split-layout.reverse {
+        flex-direction: column;
+    }
+
+    .media-pane,
+    .text-pane {
+        width: 100%;
+    }
+
+    .media-pane {
+        min-height: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.3rem;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+}
+
+/* Instruction Box */
+.instruction-box {
+    background: rgba(78, 205, 196, 0.1);
+    border: 2px dashed var(--secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    text-align: center;
+    font-style: italic;
+    color: var(--gray);
+}
+
+/* Interactive Deck for Presentations */
+.interactive-deck {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.interactive-card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.interactive-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.interactive-card h3 {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.interactive-card p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.interactive-card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 1;
+}
+
+.interactive-image {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.year-display {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Reset styles for nested cards inside interactive decks */
+.interactive-card .card,
+.interactive-card .audience-card,
+.interactive-card .strength-card,
+.interactive-card .criticism-card,
+.interactive-card .improvement-card,
+.interactive-card .game-card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.interactive-card .economic-card {
+    max-width: 500px;
+}
+
+/* Presentation Mode */
+#start-presentation-btn {
+    margin-top: 2rem;
+    padding: 14px 35px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#start-presentation-btn:hover {
+    background: #e65c2e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.presentation-mode {
+    cursor: pointer;
+}

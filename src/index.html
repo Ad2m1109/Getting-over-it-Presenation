@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Over It with Bennett Foddy - Interactive Presentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <video id="global-background-video" autoplay muted loop>
+        <source src="assets/gameplay-background.webm" type="video/webm">
+    </video>
+    <!-- Hello Section -->
+    <section id="hello"
+        style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 6rem; color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.5);">Hello</h1>
+            <p style="font-size: 2rem; color: white; margin-top: 1rem;">Welcome to the Presentation</p>
+            <button id="start-presentation-btn" style="margin-top: 2rem;">Start Presentation</button>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+
+        <div class="hammer" id="hammer">
+            <div class="hammer-head"></div>
+            <div class="hammer-handle"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1>GETTING OVER IT</h1>
+            <p class="subtitle">with Bennett Foddy</p>
+        </div>
+
+        <div class="scroll-indicator">Scroll to explore</div>
+    </section>
+
+    <!-- Game Overview Section -->
+    <section id="overview">
+        <div class="container">
+            <h2>1. Game Overview</h2>
+            <p class="section-subtitle">A philosophical journey of persistence and frustration</p>
+
+            <div class="interactive-deck">
+                <div class="interactive-card-container">
+                    <!-- Step 1: Developer -->
+                    <div class="interactive-card" data-step="1">
+                        <img src="assets/bennett-foddy.webp" alt="Bennett Foddy" class="interactive-image">
+                        <h3>Bennett Foddy</h3>
+                        <p>Getting Over It was developed and published by Bennett Foddy, an independent game designer
+                            known for his thought-provoking and challenging games.</p>
+                    </div>
+                    <!-- Step 2: Release Year -->
+                    <div class="interactive-card" data-step="2">
+                        <div class="interactive-content">
+                            <div class="year-display">2017</div>
+                            <p>The game was released in 2017, quickly becoming a viral sensation.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3: Indie Game -->
+                    <div class="interactive-card" data-step="3">
+                        <div class="interactive-content">
+                            <h3>Indie Game</h3>
+                            <p>It is an indie game that became very popular because of its difficulty and unique
+                                concept, especially on YouTube and streaming platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Type Section -->
+    <section id="game-type">
+        <div class="container">
+            <h2>2. Game Type</h2>
+            <p class="section-subtitle">Where physics meets frustration</p>
+
+            <div class="interactive-deck">
+                <div class="interactive-card-container">
+                    <!-- Step 1: Definition -->
+                    <div class="interactive-card" data-step="1">
+                        <div class="card">
+                            <span class="icon">⚙️</span>
+                            <h3>2D Physics-Based Platformer</h3>
+                            <p>This game is a 2D physics-based platformer. It does not focus on action or graphics, but
+                                rather on precise control and physics simulation. The entire gameplay is based on a
+                                single mechanic: moving a hammer using the mouse.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section id="audience">
+        <div class="container">
+            <h2>3. Target Audience</h2>
+            <p class="section-subtitle">For those who embrace the challenge</p>
+
+            <div class="split-layout">
+                <div class="media-pane">
+                    <video controls class="section-media">
+                        <source src="assets/Speed Plays Getting Over It....webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="text-pane interactive-deck">
+                    <div class="interactive-card-container">
+                        <!-- Step 1: Frustration -->
+                        <div class="interactive-card" data-step="1"
+                            data-media-src="assets/Speed Plays Getting Over It....webm" data-media-type="video">
+                            <div class="audience-content">
+                                <h3>Frustration & Perseverance</h3>
+                                <p>The game is mainly targeted at teenagers and adults. It requires patience, emotional
+                                    control, and perseverance, which makes it more suitable for mature players.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2: Victory -->
+                        <div class="interactive-card" data-step="2"
+                            data-media-src="assets/Speed Plays Getting Over It....webm" data-media-type="video">
+                            <div class="audience-content">
+                                <h3>The Thrill of Victory</h3>
+                                <p>The immense satisfaction of overcoming the challenge is a huge draw for its target
+                                    audience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economic Model Section -->
+    <section id="economic">
+        <div class="container">
+            <h2>4. Economic Model</h2>
+            <p class="section-subtitle">Simple, honest, one-time purchase</p>
+
+            <div class="interactive-deck">
+                <div class="interactive-card-container">
+                    <!-- Step 1: Price -->
+                    <div class="interactive-card" data-step="1">
+                        <div class="price-tag">$7.99</div>
+                    </div>
+                    <!-- Step 2: Explanation -->
+                    <div class="interactive-card" data-step="2">
+                        <div class="card economic-card">
+                            <span class="icon">💰</span>
+                            <h3>One-Time Purchase</h3>
+                            <p>Getting Over It uses a simple economic model. It is a one-time purchase game, with no
+                                microtransactions, no DLCs, and no pay-to-win mechanics.</p>
+                            <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Just you, the
+                                mountain, and endless attempts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Principle Section -->
+    <section id="gameplay">
+        <div class="container">
+            <h2>5. Gameplay Principle</h2>
+            <p class="section-subtitle">Experience the unique control system</p>
+
+            <div class="split-layout reverse gameplay-split">
+                <div class="media-pane">
+                    <video controls muted class="section-media">
+                        <source src="assets/gameplay-background.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="text-pane interactive-deck">
+                    <div class="interactive-card-container">
+                        <!-- Step 1: Objective -->
+                        <div class="interactive-card" data-step="1" data-media-src="assets/gameplay-background.webm"
+                            data-media-type="video">
+                            <div class="card">
+                                <h3>🏔️ Climb The Mountain</h3>
+                                <p style="font-size: 1.1rem; line-height: 1.8;">
+                                    The objective of the game is very simple: climb to the top of the mountain without
+                                    falling. However, there are no checkpoints. If the player makes a mistake, they can
+                                    lose a lot of progress, which creates tension and frustration. The game is designed
+                                    to test the player’s skill, patience, and mindset.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step 2: Gameplay Video (Now just a text prompt as video is persistent) -->
+                        <div class="interactive-card" data-step="2" data-media-src="assets/gameplay-background.webm"
+                            data-media-type="video">
+                            <div class="card">
+                                <h3>🕹️ Precise Controls</h3>
+                                <p>Watch the gameplay on the left. Notice how every movement of the mouse directly
+                                    translates to the hammer's position.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section id="strengths">
+        <div class="container">
+            <h2>6. Strengths</h2>
+            <p class="section-subtitle">What makes this game unforgettable</p>
+
+            <div class="interactive-deck">
+                <div class="interactive-card-container" style="min-height: 500px;">
+                    <!-- Step 1: Gameplay -->
+                    <div class="interactive-card" data-step="1">
+                        <div class="strength-card">
+                            <div class="strength-content">
+                                <h3>🎯 Original Gameplay</h3>
+                                <p>One of the main strengths of Getting Over It is its original gameplay. The physics
+                                    feel realistic and unforgiving.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2: Narration -->
+                    <div class="interactive-card" data-step="2">
+                        <div class="strength-card">
+                            <div class="strength-content">
+                                <h3>🎙️ Philosophical Narration</h3>
+                                <p>Another strong point is the narration: Bennett Foddy comments on the player’s
+                                    failures, which adds a philosophical and psychological dimension to the experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3: Emotion -->
+                    <div class="interactive-card" data-step="3">
+                        <div class="strength-card">
+                            <div class="strength-content">
+                                <h3>💔 Strong Emotions</h3>
+                                <div class="media-placeholder"
+                                    style="height: 70vh; padding:0; margin-bottom: 0; background: transparent; box-shadow: none;">
+                                    <video controls class="section-media"
+                                        style="width:100%; height:100%; object-fit: contain; border-radius: 12px;">
+                                        <source src="assets/vicroty.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Criticism Section -->
+    <section id="criticism">
+        <div class="container">
+            <h2>7. Criticism</h2>
+            <p class="section-subtitle">The painful truth about difficulty</p>
+
+            <div class="split-layout">
+                <div class="media-pane">
+                    <video controls class="section-media">
+                        <source src="assets/Speed Plays Getting Over It....webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="text-pane interactive-deck">
+                    <div class="interactive-card-container">
+                        <!-- Step 1: Frustration -->
+                        <div class="interactive-card" data-step="1"
+                            data-media-src="assets/Speed Plays Getting Over It....webm" data-media-type="video">
+                            <div class="criticism-card">
+                                <h3>😤 Extreme Frustration</h3>
+                                <p>Despite its originality, the game can be extremely frustrating. The difficulty can be
+                                    overwhelming and may cause many players to quit.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2: No Checkpoints -->
+                        <div class="interactive-card" data-step="2" data-media-src="assets/big-fall.webm"
+                            data-media-type="video">
+                            <div class="criticism-card">
+                                <h3>🚫 No Checkpoints</h3>
+                                <p>The lack of checkpoints may discourage many players. One mistake can erase hours of
+                                    progress, making the game extremely unforgiving.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3: Accessibility -->
+                        <div class="interactive-card" data-step="3" data-media-src="assets/big-fall.webm"
+                            data-media-type="video">
+                            <div class="criticism-card">
+                                <h3>♿ Accessibility Issues</h3>
+                                <p>The game does not offer accessibility options, such as difficulty modes or
+                                    alternative controls, which limits its audience. The precise mouse control can be
+                                    difficult for players with motor skill limitations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposed Improvements Section -->
+    <section id="improvements">
+        <div class="container">
+            <h2>8. Proposed Improvements</h2>
+            <p class="section-subtitle">How to make the experience more accessible</p>
+
+            <div class="interactive-deck">
+                <div class="interactive-card-container" style="min-height: 500px;">
+                    <!-- Step 1: Checkpoints -->
+                    <div class="interactive-card" data-step="1">
+                        <div class="improvement-card">
+                            <span class="icon">💾</span>
+                            <h3>Optional Checkpoints</h3>
+                            <p>A non-invasive checkpoint system for beginners would make the game more accessible
+                                without changing its core philosophy.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2: Practice Mode -->
+                    <div class="interactive-card" data-step="2">
+                        <div class="improvement-card">
+                            <span class="icon">🎓</span>
+                            <h3>Practice Mode</h3>
+                            <p>An optional practice mode where players can practice difficult sections without losing
+                                overall progress.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3: Accessibility -->
+                    <div class="interactive-card" data-step="3">
+                        <div class="improvement-card">
+                            <span class="icon">♿</span>
+                            <h3>Accessibility Settings</h3>
+                            <p>Accessibility settings, like sensitivity adjustment or visual aids, would open the game
+                                to a wider audience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Games Section -->
+    <section id="similar">
+        <div class="container">
+            <h2>9. Similar Games</h2>
+            <p class="section-subtitle">Other games that test your patience</p>
+
+            <div class="interactive-deck">
+                <div class="interactive-card-container" style="min-height: 500px;">
+                    <!-- Step 1: Jump King -->
+                    <div class="interactive-card" data-step="1">
+                        <div class="game-card">
+                            <div class="game-image">
+                                <div>👑</div>
+                            </div>
+                            <div class="game-info">
+                                <h3>Jump King</h3>
+                                <p>Precise jumping mechanics where you climb a massive tower. Each jump must be
+                                    perfectly timed and aimed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2: Pogostuck -->
+                    <div class="interactive-card" data-step="2">
+                        <div class="game-card">
+                            <div class="game-image">
+                                <div>🦘</div>
+                            </div>
+                            <div class="game-info">
+                                <h3>Pogostuck</h3>
+                                <p>Master a pogo stick to climb treacherous terrain, with similarly frustrating physics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3: Only Up -->
+                    <div class="interactive-card" data-step="3">
+                        <div class="game-card">
+                            <div class="game-image">
+                                <div>⬆️</div>
+                            </div>
+                            <div class="game-info">
+                                <h3>Only Up!</h3>
+                                <p>A modern 3D parkour climbing game known for its rage-inducing falls.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section id="thank-you"
+        style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 5rem; color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.5);">Thank You</h2>
+            <p style="font-size: 2.5rem; color: white; margin-top: 2rem;">for your attention</p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+            <strong>Getting Over It with Bennett Foddy</strong>
+        </p>
+        <p>To conclude, Getting Over It is a game that proves that simple mechanics can create deep experiences. Thank
+            you for your attention.</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+            © 2017 Bennett Foddy. This is a fan-made educational project.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
